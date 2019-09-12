@@ -43,11 +43,13 @@ public class Robot implements InterfaceRobot {
 	/*Nos permite saber si el robot esta caminando*/
 	@Override
 	public void caminar(boolean camina) {
-		if (camina != this.cocina) 
+		if (camina != this.cocina) { 
 			desactivar();
 			this.cocina = false;
 			this.camina = false;
+		} 
 		this.camina = true;
+		System.out.println("Caminando hacia el cliente...");
 	}
 
 	/*Nos permite saber si el robot esta cocinando*/

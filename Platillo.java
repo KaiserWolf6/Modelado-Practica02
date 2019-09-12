@@ -1,4 +1,4 @@
-public class Platillo  {
+public class Platillo implements PlatilloInterface {
 	
 	private int id;
 	private String nombrePlatillo;
@@ -18,6 +18,7 @@ public class Platillo  {
 		vegetariano = false;
 	}
 
+	@Override
 	public int getId() {
 		return id;
 	}
@@ -50,20 +51,21 @@ public class Platillo  {
 		this.precio = precio;
 	}	
 
-	public boolean getQueso() {
-		return tieneQueso;
+	@Override
+	public void tenerQueso(boolean tieneQueso) {
+		if (tieneQueso) {
+			this.tieneQueso = true;
+		}
+		this.tieneQueso = false;
 	}
 
-	public void setQueso(boolean tieneQueso) {
-		this.tieneQueso = tieneQueso;
+	@Override
+	public void esVegetariano(boolean vegetariano) {
+		if (vegetariano) {
+			this.vegetariano = true;
+		}
+		this.vegetariano = false;
 	}
 
-	public boolean getVegetariano() {
-		return vegetariano;
-	}
-
-	public void setVegetariano(boolean vegetariano) {
-		this.vegetariano = vegetariano;
-	}
 
 }
