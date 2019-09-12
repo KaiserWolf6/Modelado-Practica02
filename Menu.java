@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
-import.util.NoSuchElementException;
+import java.util.NoSuchElementException;
 
 
 public class Menu<T> implements Iterable<T>{
@@ -111,8 +111,11 @@ public class Menu<T> implements Iterable<T>{
 		return lista_de_menus;
 	}
 
-	public void agregarMenu(T itemm) {
-		
+	/*Agrega los menus que se van a mostrar al cliente*/
+	public void agregarMenu(T item) {
+		lista_de_menus.add(item);		
 	}
+
+
 
 }
