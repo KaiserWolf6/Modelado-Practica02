@@ -21,29 +21,48 @@ public class Robot implements InterfaceRobot {
 		this.atiende = false;
 	}
 
+	/*Saluda al cliente*/
+	public void saludar() {
+		System.out.println("Bienvenido! Que desea ordenar?");
+	}
+
 	/*Nos permite saber si el robot esta activado*/
 	@Override
 	public void activar() {
 		this.activado = true;
+		System.out.println("Robot activado!");
 	}
 
 	/*Nos permite saber si el robot esta desactivado*/
 	@Override
 	public void desactivar() {
 		this.activado = false;
+		System.out.println("Robot desactivado!");
 	}
 
 	/*Nos permite saber si el robot esta caminando*/
 	@Override
-	public void caminar() {
-		if (this.camina && !this.cocina) 
-			this.activado = false;
-		
+	public void caminar(boolean camina) {
+		if (camina != this.cocina) 
+			desactivar();
+			this.cocina = false;
+			this.camina = false;
+		this.camina = true;
 	}
 
+	/*Nos permite saber si el robot esta cocinando*/
 	@Override
-	public void cocinar() {
-
+	public void cocinar(boolean cocina) {
+		if (cocina) {
+			this.camina = false;
+			this.atiende = false;
+			this.cocina = true;
+			//incompleto, falta mostrar el procedimiento
+		} else if (cocina && desactivar()) {
+			throw new CookException("El robot esta desactivado");
+		} else {
+			this.cocina = false;
+		}
 	}
 
 	@Override
@@ -52,7 +71,12 @@ public class Robot implements InterfaceRobot {
 	}
 
 	@Override
-	public boolean atender(boolean atiende) {
+	public void guardar() {
+
+	}
+
+	@Override
+	public void atender(boolean atiende) {
 		if (atiende) {
 			activar();
 			this.atiende = true;
@@ -61,7 +85,6 @@ public class Robot implements InterfaceRobot {
 		} else {
 			this.atiende = false;
 		}
-
 	}
 	
 }

@@ -11,19 +11,19 @@ public interface InterfaceRobot {
 	public void desactivar();
 
 	/*Muestra el procedimiento de coccion y entrega*/
-	public boolean cocinar(boolean cocina);
+	public void cocinar(boolean cocina);
 
 	/*Guarda los menus*/
 	public void guardar();
 
 	/*Muestra que el robot se dirige hacie el cliente*/
-	public boolean caminar(boolean camina, boolean cocina);
+	public void caminar(boolean camina);
 
 	/*Muestra los menus que hay disponibles*/
 	public void leer();
 
 	/*Muestra la interaccion con el cliente*/
-	public boolean atender(boolean atender);
+	public void atender(boolean atender);
 
 	/*Accede a la lista de Menus*/
 	public void acceder();
