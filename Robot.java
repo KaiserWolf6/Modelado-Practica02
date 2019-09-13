@@ -12,6 +12,10 @@ public class Robot implements InterfaceRobot {
 	private boolean cocina;
 	/*Nos indica que el robot esta atendiendo al cliente*/
 	private boolean atiende;
+	/*Lista de platillos que tienen los menus*/
+	private ArrayList<Platillo> lista_platillos;
+	/*Lista de Menus*/
+	private ArrayList<Menu> tipos_menu;
 
 	/*Constructor de la clase robot*/
 	public Robot() {

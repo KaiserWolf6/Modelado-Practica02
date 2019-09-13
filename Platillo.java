@@ -1,3 +1,4 @@
+/*Clase Platillo*/
 public class Platillo implements PlatilloInterface {
 	
 	private int id;
@@ -7,6 +8,7 @@ public class Platillo implements PlatilloInterface {
 	private boolean tieneQueso;
 	private boolean vegetariano;
 
+	/*Constructor de la clase platillo*/
 	public Platillo(int id, String, nombrePlatillo, String descripcion, 
 		int precio) {
 

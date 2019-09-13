@@ -7,8 +7,8 @@ public interface IteradorMenu<T> extends Iterator<T> {
 
 	public T previous();
 
-	public void start();
+	public boolean hasNext();
 
-	public void end();
+	public Object next();
 
 }
